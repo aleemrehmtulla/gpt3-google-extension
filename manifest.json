@@ -1,0 +1,23 @@
+{
+  "name": "GPT-3 <> Google",
+  "version": "0.1.0",
+  "description": "Directly answering questions using GPT-3",
+  "host_permissions": ["https://*.google.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/logo.png"
+    },
+    "default_title": "GPT-3 <> Google",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
