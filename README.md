@@ -24,6 +24,7 @@ https://user-images.githubusercontent.com/60443878/197319074-5f5b51f4-1b89-4237-
 ## Usage 🤝
 
 1. clone this repo
+2. add you openai API key in `background.js`
 2. head to `chrome://extensions`
 3. hit `developer mode` in top right
 4. add the root of this repo in `load unpacked extension`
