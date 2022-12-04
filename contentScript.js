@@ -9,7 +9,7 @@
   chrome.runtime.sendMessage(
     { data: window.location.href },
     function (response) {
-      if (response != undefined && response != "") {
+      if (response != undefined && response != "" && response != "No API key") {
         // if all is good, add the answer to the div 🏎
         infoDiv.innerHTML = `  
               GPT-3 Answer 👇
@@ -17,8 +17,9 @@
               <h1 style="padding-top: 10px;">${response}</h1>
            `;
       } else {
-        debugger;
-        alert("No response");
+        alert(
+          "No response from OpenAI. Ensure you have a key in `background.js`! Feel free to msg @aleemrehmtulla on Twitter for any help :)"
+        );
       }
     }
   );

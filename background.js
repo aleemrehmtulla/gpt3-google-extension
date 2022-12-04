@@ -11,6 +11,15 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   const step4 = step3.join(" ");
   const prompt = step4.split("&")[0];
 
+  // replace `null` with your OpenAI API key. grab it here: https://beta.openai.com/account/api-keys
+  const API_KEY = null;
+
+  // no point in fetching without an API key 😜
+  if (API_KEY === null) {
+    sendResponse("No API key");
+    return;
+  }
+
   // call openai for a response 🤠
   fetch("https://api.openai.com/v1/completions", {
     body: JSON.stringify({
@@ -28,7 +37,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         // add your api key from openai.com here
         // keeping in plaintext as this is just for personal use
         // don't push to github like this ;)
-        "Bearer [YOUR_API_KEY]",
+        `Bearer ${API_KEY}`,
     },
     method: "POST",
   })
