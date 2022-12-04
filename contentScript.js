@@ -9,7 +9,6 @@
   chrome.runtime.sendMessage(
     { data: window.location.href },
     function (response) {
-      debugger;
       if (response != undefined && response != "") {
         // if all is good, add the answer to the div 🏎
         infoDiv.innerHTML = `  
