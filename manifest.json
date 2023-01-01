@@ -2,13 +2,13 @@
   "name": "GPT-3 <> Google",
   "version": "0.1.0",
   "description": "Directly answering questions using GPT-3",
-  "host_permissions": ["https://*.google.com/*"],
+  "host_permissions": ["https://www.google.com/search*"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://*.google.com/*"],
+      "matches": ["https://www.google.com/search*"],
       "js": ["contentScript.js"]
     }
   ],
