@@ -21,15 +21,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 
   // call openai for a response 🤠
-  fetch("https://api.openai.com/v1/completions", {
+  fetch("https://api.openai.com/v1/chat/completions", {
     body: JSON.stringify({
-      model: "text-davinci-002",
-      prompt: prompt,
-      temperature: 0.7,
-      max_tokens: 256,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0,
+      model: "gpt-3.5-turbo", // If you have GPT-4 Beta access, turn this to "gpt-4"!
+      messages: [{"role":"system", "content":"You are GPTForGoogle. Respond as concisely as possible. Read the user instructions carefully."}},{"role": "user", "content": prompt}]
     }),
     headers: {
       "Content-Type": "application/json",
