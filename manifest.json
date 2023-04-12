@@ -1,7 +1,7 @@
 {
-  "name": "GPT-3 <> Google",
+  "name": "GPT-3 within Google Search",
   "version": "0.1.0",
-  "description": "Directly answering questions using GPT-3",
+  "description": "Get instant answers to your Google searches with GPT-3",
   "host_permissions": ["https://www.google.com/search*"],
   "background": {
     "service_worker": "background.js"
